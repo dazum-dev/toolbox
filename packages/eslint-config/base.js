@@ -1,11 +1,18 @@
 import js from '@eslint/js'
 import json from '@eslint/json'
-import pluginReact, { type ReactFlatConfig } from 'eslint-plugin-react'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import onlyWarn from 'eslint-plugin-only-warn'
+import turboPlugin from 'eslint-plugin-turbo'
 import { defineConfig } from 'eslint/config'
 import globals from 'globals'
-import tseslint, { type Config } from 'typescript-eslint'
+import tseslint from 'typescript-eslint'
 
-export default defineConfig([
+/**
+ * A shared ESLint configuration for the repository.
+ *
+ * @type {import("eslint").Linter.Config[]}
+ * */
+export const config = defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     plugins: { js },
@@ -13,7 +20,7 @@ export default defineConfig([
     languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
   tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended as ReactFlatConfig,
+  eslintConfigPrettier,
   {
     files: ['**/*.json'],
     plugins: { json },
@@ -26,4 +33,20 @@ export default defineConfig([
     language: 'json/jsonc',
     extends: ['json/recommended'],
   },
-]) as Config[]
+  {
+    plugins: {
+      turbo: turboPlugin,
+    },
+    rules: {
+      'turbo/no-undeclared-env-vars': 'warn',
+    },
+  },
+  {
+    plugins: {
+      onlyWarn,
+    },
+  },
+  {
+    ignores: ['dist/**'],
+  },
+])
