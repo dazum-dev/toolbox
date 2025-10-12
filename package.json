@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "format": "prettier --write --cache --ignore-unknown .",
+    "lint": "turbo run lint",
     "lint-staged": "lint-staged",
-    "format": "prettier --write",
     "prepare": "husky"
   },
   "packageManager": "pnpm@8.15.6",
@@ -21,13 +22,13 @@
   },
   "lint-staged": {
     "*": [
-      "pnpm format --cache --ignore-unknown"
+      "pnpm format"
     ],
     "packages/*/{src,types}/**/*.ts": [
-      "eslint --cache --fix"
+      "eslint --cache ."
     ],
     "packages/**/*.d.ts": [
-      "eslint --cache --fix"
+      "eslint --cache ."
     ]
   }
 }
