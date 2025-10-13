@@ -1,6 +1,6 @@
 # @toolbox/dev CHANGELOG
 
-## v0.1.0 [12-10-2025]
+## v0.1.0 [14-10-2025]
 
 ### Added
 
