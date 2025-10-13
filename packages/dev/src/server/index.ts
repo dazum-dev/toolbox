@@ -33,13 +33,13 @@ const onListen =
     console.log(`${bold(green('➜'))} ${bold(black(network))}`)
   }
 
-export type TinyApp = App & { restart: () => Promise<void>; stop: () => void }
+export type ToolboxApp = App & { restart: () => Promise<void>; stop: () => void }
 
-export const startServer = async (options: ToolboxOptions): Promise<TinyApp> => {
+export const startServer = async (options: ToolboxOptions): Promise<ToolboxApp> => {
   const { devServer, output } = options
   const { compress, host, hot, https, port } = devServer
 
-  const app: TinyApp = new App() as TinyApp
+  const app: ToolboxApp = new App() as ToolboxApp
 
   // Create HTTP server instance
   // @ts-expect-error server type incompatibility
