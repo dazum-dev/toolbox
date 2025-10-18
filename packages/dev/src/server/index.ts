@@ -11,10 +11,10 @@ import { black, bold, cyan, green } from 'kolorist'
 import sirv from 'sirv'
 import { WebSocketServer } from 'ws'
 
-import { getServerAddresses } from '../lib/net'
-import type { DevServer, ToolboxOptions } from '../types'
+import type { DevServer, ToolboxOptions } from '@toolbox/config'
 
 import pkg from '../../package.json'
+import { getServerAddresses } from '../lib/net'
 import { getCompressionConfig } from './middlewares/compress'
 import { initSocket } from './socket'
 

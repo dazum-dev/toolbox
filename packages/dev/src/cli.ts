@@ -2,9 +2,9 @@
 
 import sade from 'sade'
 
+import type { DevCliOptions } from '@toolbox/config'
+import { COMPRESS, ENV, HOST, HOT, PORT } from '@toolbox/config'
 import pkg from '../package.json'
-import { COMPRESS, ENV, HOST, HOT, PORT } from './constants'
-import { DevCliOptions } from './types'
 
 const prog = sade('toolbox')
 
