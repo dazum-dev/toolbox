@@ -1,11 +1,9 @@
 {
   "name": "toolbox-monorepo",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "format": "prettier --write --cache --ignore-unknown .",
-    "lint": "turbo run lint",
-    "lint-staged": "lint-staged",
     "prepare": "husky"
   },
   "packageManager": "pnpm@8.15.6",
@@ -15,20 +13,9 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.4",
-    "prettier": "^3.6.2",
-    "turbo": "^2.5.8",
-    "typescript": "^5.9.3"
+    "nx": "21.6.5"
   },
-  "lint-staged": {
-    "*": [
-      "pnpm format"
-    ],
-    "packages/*/{src,types}/**/*.ts": [
-      "eslint --cache ."
-    ],
-    "packages/**/*.d.ts": [
-      "eslint --cache ."
-    ]
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }
