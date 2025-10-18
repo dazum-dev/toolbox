@@ -2,11 +2,10 @@ import { existsSync, mkdir } from 'node:fs'
 
 import chokidar from 'chokidar'
 
-import { DIST_PATH, NOOP } from '../constants'
-import { getOptions } from '../options'
+import type { DevCliOptions } from '@toolbox/config'
+import { DIST_PATH, NOOP, getOptions } from '@toolbox/config'
 
 import { startServer } from '../server'
-import type { DevCliOptions } from '../types'
 
 const checkBuildPath = () => {
   const isPathExist = existsSync(DIST_PATH)
