@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "nx": "nx",
     "prepare": "husky"
   },
   "packageManager": "pnpm@8.15.6",
@@ -12,10 +13,8 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "devDependencies": {
+    "@nx/workspace": "^21.6.5",
     "husky": "^9.1.7",
     "nx": "21.6.5"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+  }
 }
