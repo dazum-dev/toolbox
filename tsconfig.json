@@ -1,0 +1,10 @@
+{
+  "extends": "./packages/typescript-config/tsconfig.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/typescript-config"
+    }
+  ]
+}
