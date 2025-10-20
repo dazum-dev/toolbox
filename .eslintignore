@@ -1,0 +1,6 @@
+.github
+.husky
+.nx
+.vscode
+node_modules
+packages/eslint-config

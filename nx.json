@@ -2,12 +2,8 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "nxCloudId": "68f3fb6c6f40db247a92c695",
   "namedInputs": {
-    "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci.yml"
-    ],
-    "default": [
-      "sharedGlobals"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
+    "default": ["sharedGlobals"]
   },
   "plugins": [
     {
@@ -23,15 +19,11 @@
           "watchDepsName": "watch-deps"
         }
       },
-      "exclude": [
-        "packages/typescript-config/*"
-      ]
+      "exclude": ["packages/typescript-config/*"]
     },
     {
       "plugin": "@nx/js/typescript",
-      "include": [
-        "packages/typescript-config/*"
-      ],
+      "include": ["packages/typescript-config/*"],
       "options": {
         "typecheck": {
           "targetName": "typecheck"
