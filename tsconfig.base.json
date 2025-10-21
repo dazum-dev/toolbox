@@ -1,3 +1,10 @@
 {
-  "extends": "./packages/typescript-config/tsconfig.json"
+  "extends": "./packages/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@toolbox/plugin-react": ["packages/plugin-react/src/index.ts"],
+      "config": ["packages/config/src/index.ts"],
+      "toolbox-dev": ["packages/toolbox-dev/src/index.ts"]
+    }
+  }
 }

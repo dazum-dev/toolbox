@@ -22,17 +22,27 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "devDependencies": {
+    "@nx/eslint": "21.6.5",
+    "@nx/eslint-plugin": "21.6.5",
     "@nx/js": "21.6.5",
+    "@nx/rollup": "21.6.5",
     "@nx/workspace": "^21.6.5",
     "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
+    "@swc/cli": "~0.6.0",
+    "@swc/core": "~1.13.3",
     "@swc/helpers": "~0.5.11",
     "@types/node": "20.19.9",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "^10.0.0",
     "husky": "^9.1.7",
+    "jsonc-eslint-parser": "^2.1.0",
     "nx": "21.6.5",
     "prettier": "^2.6.2",
+    "rollup": "^4.14.0",
+    "swc-loader": "0.1.15",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2"
-  },
-  "dependencies": {}
+  }
 }
