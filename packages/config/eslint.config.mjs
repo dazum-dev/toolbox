@@ -19,4 +19,7 @@ export default [
       parser: await import('jsonc-eslint-parser'),
     },
   },
+  {
+    ignores: ['dist/**/*.{js,jsx,ts,tsx}', '.rollup.cache/**'],
+  },
 ]
