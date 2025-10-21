@@ -2,6 +2,7 @@
   "extends": "./packages/typescript-config/tsconfig.json",
   "compilerOptions": {
     "paths": {
+      "@toolbox/plugin-react": ["packages/plugin-react/src/index.ts"],
       "config": ["packages/config/src/index.ts"]
     }
   }

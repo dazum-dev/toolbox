@@ -44,6 +44,5 @@
     "swc-loader": "0.1.15",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2"
-  },
-  "dependencies": {}
+  }
 }

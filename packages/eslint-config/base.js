@@ -56,6 +56,10 @@ export default [
               sourceTag: 'scope:config',
               onlyDependOnLibsWithTags: ['type:config'],
             },
+            {
+              sourceTag: 'scope:plugin',
+              onlyDependOnLibsWithTags: ['scope:config', 'type:config'],
+            },
           ],
         },
       ],
