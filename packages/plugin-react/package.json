@@ -15,21 +15,24 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dazum-dev/toolbox.git",
-    "directory": "packages/config"
+    "directory": "packages/plugin-react"
   },
   "bugs": {
     "url": "https://github.com/dazum-dev/toolbox/issues"
   },
-  "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/config#readme",
+  "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/plugin-react#readme",
   "devDependencies": {
     "@nx/eslint-plugin": "21.6.5",
     "@nx/rollup": "21.6.5",
     "@rollup/pluginutils": "^5.3.0",
-    "@swc/core": "~1.13.5",
     "@toolbox/eslint-config": "workspace:^",
     "@toolbox/tsconfig": "workspace:^",
     "@types/node": "20.19.9",
     "get-tsconfig": "^4.12.0",
-    "jsonc-eslint-parser": "^2.1.0"
+    "jsonc-eslint-parser": "^2.1.0",
+    "tsup": "^8.5.0"
+  },
+  "peerDependencies": {
+    "@swc/core": "^1.13.5"
   }
 }

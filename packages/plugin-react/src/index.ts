@@ -3,7 +3,9 @@ import { access, stat } from 'node:fs/promises'
 import { dirname, extname, join, resolve } from 'node:path'
 
 import { createFilter } from '@rollup/pluginutils'
-import { Options, minify as swcMinify, transform as swcTransform } from '@swc/core'
+import type { Options } from '@swc/core'
+import { minify as swcMinify, transform as swcTransform } from '@swc/core'
+import type { PluginContext } from 'rollup'
 
 import { getSwcConfig } from './config'
 import { defaultPluginOptions, INCLUDE_REGEXP } from './constants'
@@ -103,7 +105,7 @@ export const react = (options: ReactPluginOptions = defaultPluginOptions) => {
 
       // TODO: parse code to handle import.meta.glob feature
 
-      const swcConfig: Options = getSwcConfig({
+      const swcConfig: Options = getSwcConfig(this as unknown as PluginContext, {
         id,
         isDev,
         pluginOption: opts,

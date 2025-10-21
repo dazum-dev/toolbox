@@ -1,6 +1,6 @@
 import { dirname } from 'node:path'
 
-import { Options } from '@swc/core'
+import type { Options } from '@swc/core'
 import type { PluginContext } from 'rollup'
 
 import { defaultPluginOptions } from './constants'
@@ -46,10 +46,10 @@ export type ConfigOption = {
   tsconfigPath?: string
 }
 
-export const getSwcConfig = (options: ConfigOption = defaultConf): Options => {
+export const getSwcConfig = (ctx: PluginContext, options: ConfigOption = defaultConf): Options => {
   const isTypescript = ['.ts', '.tsx'].includes(options.extension)
   const tsconfigOptions = getOptions(
-    this as unknown as PluginContext,
+    ctx,
     dirname(options.id),
     (options.tsconfigPath || '') as string,
   )

@@ -8,6 +8,7 @@ export default [
       '@nx/dependency-checks': [
         'error',
         {
+          ignoredDependencies: ['@swc/core'],
           ignoredFiles: [
             '{projectRoot}/eslint.config.{js,cjs,mjs,ts,cts,mts}',
             '{projectRoot}/rollup.config.{js,ts,mjs,mts,cjs,cts}',
@@ -18,5 +19,8 @@ export default [
     languageOptions: {
       parser: await import('jsonc-eslint-parser'),
     },
+  },
+  {
+    ignores: ['dist/**/*.{js,jsx,ts,tsx}'],
   },
 ]

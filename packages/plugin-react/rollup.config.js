@@ -8,6 +8,8 @@ export default withNx(
     compiler: 'swc',
     format: ['esm'],
     assets: [{ input: '{projectRoot}', output: '.', glob: '*.md' }],
+    useLegacyTypescriptPlugin: false,
+    external: ['@swc/core'],
   },
   {
     // Provide additional rollup configuration here. See: https://rollupjs.org/configuration-options
