@@ -1,0 +1,32 @@
+{
+  "name": "@toolbox/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "author": "Dazum Dev <dazum.dev@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dazum-dev/toolbox.git",
+    "directory": "packages/config"
+  },
+  "bugs": {
+    "url": "https://github.com/dazum-dev/toolbox/issues"
+  },
+  "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/config#readme",
+  "devDependencies": {
+    "@nx/eslint-plugin": "21.6.5",
+    "@nx/rollup": "21.6.5",
+    "@toolbox/eslint-config": "workspace:^",
+    "@toolbox/tsconfig": "workspace:^",
+    "@types/node": "20.19.9",
+    "jsonc-eslint-parser": "^2.1.0"
+  }
+}

@@ -1,5 +1,5 @@
 import js from '@eslint/js'
-import nxPlugin from '@nx/eslint-plugin'
+import nx from '@nx/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import globals from 'globals'
 
@@ -7,9 +7,10 @@ import prettierPlugin from 'eslint-plugin-prettier/recommended'
 
 export default [
   js.configs.recommended,
-  // { plugins: { '@nx': nxPlugin } },
-  ...nxPlugin.configs['flat/javascript'],
-  ...nxPlugin.configs['flat/typescript'],
+  { plugins: { '@nx': nx } },
+  ...nx.configs['flat/base'],
+  ...nx.configs['flat/javascript'],
+  ...nx.configs['flat/typescript'],
   {
     languageOptions: {
       parser: tsParser,
@@ -17,9 +18,9 @@ export default [
         ...globals.node,
       },
     },
-    rules: {
-      '@nx/enforce-module-boundaries': 'error',
-    },
+    // rules: {
+    //   '@nx/enforce-module-boundaries': 'error',
+    // },
   },
   {
     ...prettierPlugin,
@@ -49,11 +50,11 @@ export default [
         'error',
         {
           enforceBuildableLibDependency: true,
-          allow: [],
+          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
           depConstraints: [
             {
-              sourceTag: '*',
-              onlyDependOnLibsWithTags: ['*'],
+              sourceTag: 'scope:config',
+              onlyDependOnLibsWithTags: ['type:config'],
             },
           ],
         },
