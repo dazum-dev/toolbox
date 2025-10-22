@@ -1,6 +1,10 @@
 type ObjectType = object & { plugins: unknown[] } & Record<string, unknown | unknown[]>
 
-const updateObject = <T extends Partial<ObjectType>>(obj: T, key: string, value: unknown | unknown[]) => {
+const updateObject = <T extends Partial<ObjectType>>(
+  obj: T,
+  key: string,
+  value: unknown | unknown[],
+) => {
   const result = obj
 
   if (key === 'plugins' && Array.isArray(value)) {

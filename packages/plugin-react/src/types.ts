@@ -1,4 +1,4 @@
-import { JscConfig } from '@swc/core'
+import type { JscConfig } from '@swc/core'
 
 export type EXT_REGEX = RegExp | string | string[]
 

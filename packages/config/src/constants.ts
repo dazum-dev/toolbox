@@ -17,6 +17,7 @@ export const ENV = {
   PRODUCTION: 'production',
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 export const NOOP = () => {}
 export const DIST_PATH = resolve(CWD, '.toolbox')
 
@@ -24,8 +25,7 @@ export const PUBLIC_PATH = resolve(CWD, 'public')
 export const TOOLBOX_CONFIG = resolve(CWD, 'toolbox.config.js')
 export const APP_PATH = resolve(CWD, 'app')
 export const TS_CONFIG = resolve(CWD, 'tsconfig.json')
-// eslint-disable-next-line turbo/no-undeclared-env-vars
-export const NODE_ENV = process.env.NODE_ENV || ENV.PRODUCTION
+export const NODE_ENV = process.env['NODE_ENV'] || ENV.PRODUCTION
 export const IS_PROD = NODE_ENV === ENV.PRODUCTION
 export const EXTS = ['.js', '.jsx', '.ts', '.tsx']
 

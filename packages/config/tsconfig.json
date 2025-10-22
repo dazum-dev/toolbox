@@ -1,13 +1,23 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@toolbox/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "dist",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "jsx": "react-jsx",
-    "module": "ES2022",
-    "moduleResolution": "bundler"
+    "baseUrl": "/",
+    "module": "es2022",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "importHelpers": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "moduleResolution": "bundler",
+    "rootDir": "src"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "tsup.config.ts"],
-  "exclude": ["node_modules"]
+  "files": [],
+  "include": ["src/**/*.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
 }

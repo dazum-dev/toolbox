@@ -44,7 +44,7 @@ export const getOptions = async (
   watchFiles: string[],
 ): Promise<ToolboxOptions> => {
   const env = await readEnvFile(watchFiles)
-  const mode = process.env.NODE_ENV === ENV.DEVELOPMENT ? ENV.DEVELOPMENT : ENV.PRODUCTION
+  const mode = process.env['NODE_ENV'] === ENV.DEVELOPMENT ? ENV.DEVELOPMENT : ENV.PRODUCTION
   const opts = deepMerge<ToolboxOptions>(defaultConfig, {
     // @ts-expect-error optional parameters are passed here
     devServer: {
