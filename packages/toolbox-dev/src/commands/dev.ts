@@ -2,9 +2,7 @@ import { existsSync, mkdir } from 'node:fs'
 
 import chokidar from 'chokidar'
 
-// @ts-expect-error: The module '@toolbox/config' is not a package.
 import type { DevCliOptions } from '@toolbox/config'
-// @ts-expect-error: The module '@toolbox/config' is not a package.
 import { DIST_PATH, NOOP, getOptions } from '@toolbox/config'
 
 import { startServer } from '../server'

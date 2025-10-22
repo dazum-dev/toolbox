@@ -2,9 +2,7 @@
 
 import sade from 'sade'
 
-// @ts-expect-error: The module '@toolbox/config' is not a package.
 import type { DevCliOptions } from '@toolbox/config'
-// @ts-expect-error: The module '@toolbox/config' is not a package.
 import { COMPRESS, ENV, HOST, HOT, PORT } from '@toolbox/config'
 import pkg from '../package.json'
 

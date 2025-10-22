@@ -11,7 +11,10 @@
     "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": true,
     "moduleResolution": "bundler",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "paths": {
+      "@toolbox/config": ["../../dist/packages/config"]
+    }
   },
   "files": [],
   "include": ["src/**/*.ts", "./package.json"],

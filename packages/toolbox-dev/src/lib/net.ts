@@ -1,7 +1,6 @@
 import net from 'node:net'
 import os from 'node:os'
 
-// @ts-expect-error: The module '@toolbox/config' is not a package.
 import type { DevServer } from '@toolbox/config'
 
 /**

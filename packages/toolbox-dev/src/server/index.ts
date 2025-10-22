@@ -11,7 +11,6 @@ import { black, bold, cyan, green } from 'kolorist'
 import sirv from 'sirv'
 import { WebSocketServer } from 'ws'
 
-// @ts-expect-error: The module '@toolbox/config' is not a package.
 import type { DevServer, ToolboxOptions } from '@toolbox/config'
 import { getServerAddresses } from '../lib/net'
 

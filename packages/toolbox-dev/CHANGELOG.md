@@ -1,5 +1,11 @@
 # @toolbox/dev CHANGELOG
 
+## v0.2.1 [22-10-2025]
+
+### Fixed
+
+- fix type errors
+
 ## v0.2.0 [19-10-2025]
 
 ### Changed
