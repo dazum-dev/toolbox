@@ -8,19 +8,6 @@ export default [
       '@nx/dependency-checks': [
         'error',
         {
-          ignoredDependencies: [
-            '@tinyhttp/app',
-            '@tinyhttp/cookie-parser',
-            '@toolbox/config',
-            'chokidar',
-            'compression',
-            'kolorist',
-            'lru-send',
-            'milliparsec',
-            'sade',
-            'sirv',
-            'ws',
-          ],
           ignoredFiles: [
             '{projectRoot}/eslint.config.{js,cjs,mjs,ts,cts,mts}',
             '{projectRoot}/rollup.config.{js,ts,mjs,mts,cjs,cts}',
@@ -33,6 +20,6 @@ export default [
     },
   },
   {
-    ignores: ['dist/**/*.{js,jsx,ts,tsx}', '.rollup.cache/**'],
+    ignores: ['dist/**/*.{js,jsx,ts,tsx,json}', '.rollup.cache/**'],
   },
 ]
