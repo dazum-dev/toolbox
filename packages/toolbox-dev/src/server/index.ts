@@ -14,9 +14,9 @@ import { WebSocketServer } from 'ws'
 import type { DevServer, ToolboxOptions } from '@toolbox/config'
 import { getServerAddresses } from '../lib/net'
 
-import pkg from '../../package.json'
 import { getCompressionConfig } from './middlewares/compress'
 import { initSocket } from './socket'
+import { version as ver } from '../version'
 
 const onListen =
   (addr: Pick<AddressInfo, 'port'>, options: Pick<DevServer, 'https' | 'host'>): (() => void) =>
@@ -25,7 +25,7 @@ const onListen =
 
     const local = `Local:   ${cyan(addresses[0] as string)}`
     const network = `Network: ${addresses[1]}`
-    const version = `TOOLBOX v${pkg.version}`
+    const version = `TOOLBOX v${ver}`
 
     console.clear()
     console.log(`\n  👩‍🚀 ${green(version)}\n`)

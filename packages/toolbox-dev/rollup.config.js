@@ -3,11 +3,12 @@ import { withNx } from '@nx/rollup/with-nx.js'
 export default withNx(
   {
     main: './src/cli.ts',
-    outputPath: '../../dist/packages/toolbox-dev',
+    outputPath: './dist',
     tsConfig: './tsconfig.lib.json',
     compiler: 'swc',
     format: ['esm'],
     assets: [{ input: '{projectRoot}', output: '.', glob: '*.md' }],
+    useLegacyTypescriptPlugin: false,
   },
   {
     // Provide additional rollup configuration here. See: https://rollupjs.org/configuration-options

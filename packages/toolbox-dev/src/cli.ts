@@ -4,11 +4,11 @@ import sade from 'sade'
 
 import type { DevCliOptions } from '@toolbox/config'
 import { COMPRESS, ENV, HOST, HOT, PORT } from '@toolbox/config'
-import pkg from '../package.json'
+import { version } from './version'
 
 const prog = sade('toolbox')
 
-prog.version(pkg.version)
+prog.version(version)
 
 prog
   .command('dev', 'start dev server')
