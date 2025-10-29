@@ -1,0 +1,2 @@
+TOOLBOX_VERSION=$(node -p -e "require('./package.json').version")
+echo "toolbox-v${TOOLBOX_VERSION}"

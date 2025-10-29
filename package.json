@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "prepare": "husky"
+    "prepare": "husky",
+    "version": "sh .get-version"
   },
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@10.19.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dazum-dev/toolbox.git"
@@ -39,7 +40,7 @@
     "husky": "^9.1.7",
     "jsonc-eslint-parser": "^2.1.0",
     "nx": "21.6.5",
-    "prettier": "^2.6.2",
+    "prettier": "^3.0.0",
     "rollup": "^4.14.0",
     "swc-loader": "0.1.15",
     "tslib": "^2.3.0",
