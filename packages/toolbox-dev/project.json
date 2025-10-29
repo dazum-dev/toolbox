@@ -7,8 +7,16 @@
   "// targets": "to see all targets run: nx show project toolbox-dev --web",
   "targets": {
     "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
       "inputs": ["!{projectRoot}/**/*.md"],
-      "outputs": ["{workspaceRoot}/dist/packages/toolbox-dev"]
+      "outputs": ["{workspaceRoot}/packages/toolbox-dev/dist"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["!{projectRoot}/**/*.md"],
+      "outputs": []
     }
-  }
+  },
+  "implicitDependencies": ["@toolbox/config"]
 }
