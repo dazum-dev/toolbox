@@ -2,15 +2,9 @@
   "extends": "@toolbox/tsconfig/tsconfig.json",
   "compilerOptions": {
     "baseUrl": "/",
+    "composite": true,
     "module": "es2022",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "importHelpers": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": true,
-    "moduleResolution": "bundler",
     "rootDir": "src"
   },
   "files": [],
