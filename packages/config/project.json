@@ -9,7 +9,7 @@
     "build": {
       "cache": true,
       "inputs": ["!{projectRoot}/**/*.md"],
-      "outputs": ["{workspaceRoot}/dist/packages/config"]
+      "outputs": ["{workspaceRoot}/packages/config/dist"]
     },
     "lint": {
       "cache": true,
