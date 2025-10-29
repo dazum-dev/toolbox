@@ -14,6 +14,8 @@ import { WebSocketServer } from 'ws'
 import { getServerAddresses } from '../lib/net'
 import type { DevServer, ToolboxOptions } from '../types'
 
+import { toolboxRequestHandler } from '@toolbox/node'
+
 import pkg from '../../package.json'
 import { getCompressionConfig } from './middlewares/compress'
 import { initSocket } from './socket'
@@ -63,6 +65,8 @@ export const startServer = async (options: ToolboxOptions): Promise<ToolboxApp> 
   if (hot) {
     wss = initSocket(server)
   }
+
+  app.get('*', toolboxRequestHandler(options))
 
   server.listen(port, host, onListen({ port }, { host, https }))
 

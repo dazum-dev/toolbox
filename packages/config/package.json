@@ -8,13 +8,10 @@
     "build": "pnpm check-types && tsup",
     "check-types": "tsc --noEmit"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
-  },
-  "repository": {
+  "name": "@toolbox/config",
+  "version": "0.1.0",
+  "type": "module",
+  "author": "Dazum Dev <dazum.dev@gmail.com>",
     "type": "git",
     "url": "git+https://github.com/dazum-dev/toolbox.git",
     "directory": "packages/config"
