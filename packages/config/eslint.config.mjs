@@ -20,6 +20,6 @@ export default [
     },
   },
   {
-    ignores: ['dist/**/*.{js,jsx,ts,tsx}', '.rollup.cache/**'],
+    ignores: ['dist/**/*.{js,jsx,ts,tsx,json}', '.rollup.cache/**'],
   },
 ]
