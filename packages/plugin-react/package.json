@@ -23,14 +23,14 @@
   },
   "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/plugin-react#readme",
   "devDependencies": {
-    "@nx/eslint-plugin": "21.6.5",
-    "@nx/rollup": "21.6.5",
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/rollup": "22.0.2",
     "@rollup/pluginutils": "^5.3.0",
     "@toolbox/eslint-config": "workspace:^",
     "@toolbox/tsconfig": "workspace:^",
     "@types/node": "20.19.9",
-    "get-tsconfig": "^4.12.0",
-    "jsonc-eslint-parser": "^2.1.0"
+    "get-tsconfig": "^4.13.0",
+    "jsonc-eslint-parser": "^2.4.1"
   },
   "peerDependencies": {
     "@swc/core": "^1.13.5",

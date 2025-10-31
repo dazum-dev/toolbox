@@ -23,17 +23,17 @@
   },
   "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/toolbox-express#readme",
   "devDependencies": {
-    "@nx/eslint-plugin": "21.6.5",
-    "@nx/rollup": "21.6.5",
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/rollup": "22.0.2",
     "@toolbox/eslint-config": "workspace:^",
     "@toolbox/tsconfig": "workspace:^",
     "@types/node": "20.19.9"
   },
   "dependencies": {
-    "@rollup/plugin-alias": "^5.1.1",
-    "@rollup/plugin-commonjs": "25.0.8",
-    "@rollup/plugin-node-resolve": "15.3.1",
-    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-alias": "^6.0.0",
+    "@rollup/plugin-commonjs": "29.0.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/plugin-replace": "^6.0.3",
     "@tinyhttp/app": "^3.0.1",
     "@toolbox/config": "workspace:^",
     "@toolbox/plugin-react": "workspace:^",

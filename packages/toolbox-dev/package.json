@@ -23,14 +23,14 @@
   },
   "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/dev#readme",
   "devDependencies": {
-    "@nx/eslint-plugin": "21.6.5",
-    "@nx/rollup": "21.6.5",
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/rollup": "22.0.2",
     "@toolbox/eslint-config": "workspace:^",
     "@toolbox/tsconfig": "workspace:^",
     "@types/compression": "^1.8.1",
     "@types/node": "20.19.9",
     "@types/ws": "^8.18.1",
-    "jsonc-eslint-parser": "^2.1.0"
+    "jsonc-eslint-parser": "^2.4.1"
   },
   "dependencies": {
     "@tinyhttp/app": "^3.0.1",
@@ -43,6 +43,6 @@
     "milliparsec": "^5.1.0",
     "sade": "^1.8.1",
     "sirv": "^3.0.2",
-    "ws": "^8.18.3"
+    "@types/ws": "8.18.1"
   }
 }

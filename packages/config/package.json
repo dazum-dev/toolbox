@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/config#readme",
   "devDependencies": {
-    "@nx/eslint-plugin": "21.6.5",
-    "@nx/rollup": "21.6.5",
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/rollup": "22.0.2",
     "@toolbox/eslint-config": "workspace:^",
     "@toolbox/tsconfig": "workspace:^",
     "@types/node": "20.19.9",
-    "jsonc-eslint-parser": "^2.1.0"
+    "jsonc-eslint-parser": "^2.4.1"
   }
 }
