@@ -1,25 +1,17 @@
 {
   "name": "@toolbox/plugin-react",
-  "version": "0.1.1",
-  "description": "A dazum plugin for react projects",
+  "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "scripts": {
-    "build": "pnpm check-types && tsup",
-    "check-types": "tsc --noEmit",
-    "format": "prettier --write .",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
   "author": "Dazum Dev <dazum.dev@gmail.com>",
   "license": "MIT",
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  },
+  "main": "./dist/index.esm.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
   },
   "repository": {
     "type": "git",
@@ -30,15 +22,20 @@
     "url": "https://github.com/dazum-dev/toolbox/issues"
   },
   "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/plugin-react#readme",
-  "dependencies": {
-    "@toolbox/eslint-config": "workspace:*",
-    "@rollup/pluginutils": "^5.3.0",
-    "@swc/core": "^1.13.5",
-    "get-tsconfig": "^4.12.0",
-    "rollup": "^4.52.4",
-    "tsup": "^8.5.0"
-  },
   "devDependencies": {
-    "@types/node": "^24.7.2"
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/rollup": "22.0.2",
+    "@rollup/pluginutils": "^5.3.0",
+    "@toolbox/eslint-config": "workspace:^",
+    "@toolbox/tsconfig": "workspace:^",
+    "@types/node": "20.19.9",
+    "get-tsconfig": "^4.13.0",
+    "jsonc-eslint-parser": "^2.4.1"
+  },
+  "peerDependencies": {
+    "@swc/core": "^1.13.5",
+    "rollup": "^4.14.0",
+    "@rollup/pluginutils": "5.3.0",
+    "get-tsconfig": "4.13.0"
   }
 }

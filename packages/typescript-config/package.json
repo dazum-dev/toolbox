@@ -1,0 +1,22 @@
+{
+  "name": "@toolbox/tsconfig",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "author": "Dazum Dev <dazum.dev@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dazum-dev/toolbox.git",
+    "directory": "packages/typescript-config"
+  },
+  "bugs": {
+    "url": "https://github.com/dazum-dev/toolbox/issues"
+  },
+  "homepage": "https://github.com/dazum-dev/toolbox",
+  "devDependencies": {
+    "@types/node": "20.19.9",
+    "tslib": "^2.8.1",
+    "typescript": "~5.9.3"
+  }
+}

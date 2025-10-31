@@ -1,18 +1,17 @@
 {
   "name": "@toolbox/config",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "author": "Dazum Dev <dazum.dev@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "build": "pnpm check-types && tsup",
-    "check-types": "tsc --noEmit"
-  },
+  "main": "./dist/index.esm.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
   },
   "repository": {
     "type": "git",
@@ -24,8 +23,11 @@
   },
   "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/config#readme",
   "devDependencies": {
-    "@types/node": "^22.15.3",
-    "tsup": "^8.5.0",
-    "typescript": "^5.9.0"
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/rollup": "22.0.2",
+    "@toolbox/eslint-config": "workspace:^",
+    "@toolbox/tsconfig": "workspace:^",
+    "@types/node": "20.19.9",
+    "jsonc-eslint-parser": "^2.4.1"
   }
 }

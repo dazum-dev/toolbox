@@ -1,34 +1,47 @@
 {
   "name": "toolbox-monorepo",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
+  "author": "Dazum Dev <dazum.dev@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "format": "prettier --write --cache --ignore-unknown .",
-    "lint": "turbo run lint",
-    "lint-staged": "lint-staged",
-    "prepare": "husky"
+    "nx": "nx",
+    "version": "sh .get-version"
   },
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@10.19.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dazum-dev/toolbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dazum-dev/toolbox/issues"
+  },
   "homepage": "https://github.com/dazum-dev/toolbox",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
   "devDependencies": {
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.4",
+    "@nx/eslint": "22.0.2",
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/js": "22.0.2",
+    "@nx/rollup": "22.0.2",
+    "@nx/workspace": "22.0.2",
+    "@swc-node/register": "~1.11.1",
+    "@swc/cli": "~0.7.8",
+    "@swc/core": "~1.14.0",
+    "@swc/helpers": "~0.5.11",
+    "@types/node": "20.19.9",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "~9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "jsonc-eslint-parser": "^2.4.1",
+    "nx": "22.0.2",
     "prettier": "^3.6.2",
-    "turbo": "^2.5.8",
-    "typescript": "^5.9.3"
-  },
-  "lint-staged": {
-    "*": [
-      "pnpm format"
-    ],
-    "packages/*/{src,types}/**/*.ts": [
-      "eslint --cache ."
-    ],
-    "packages/**/*.d.ts": [
-      "eslint --cache ."
-    ]
+    "rollup": "^4.52.5",
+    "swc-loader": "0.2.6",
+    "tslib": "^2.8.1",
+    "typescript": "~5.9.3"
   }
 }

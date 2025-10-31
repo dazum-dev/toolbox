@@ -1,52 +1,84 @@
 import js from '@eslint/js'
-import json from '@eslint/json'
-import eslintConfigPrettier from 'eslint-config-prettier'
-import onlyWarn from 'eslint-plugin-only-warn'
-import turboPlugin from 'eslint-plugin-turbo'
-import { defineConfig } from 'eslint/config'
+import nx from '@nx/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
 import globals from 'globals'
-import tseslint from 'typescript-eslint'
 
-/**
- * A shared ESLint configuration for the repository.
- *
- * @type {import("eslint").Linter.Config[]}
- * */
-export const config = defineConfig([
+import prettierPlugin from 'eslint-plugin-prettier/recommended'
+
+export default [
+  js.configs.recommended,
+  { plugins: { '@nx': nx } },
+  ...nx.configs['flat/base'],
+  ...nx.configs['flat/javascript'],
+  ...nx.configs['flat/typescript'],
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    plugins: { js },
-    extends: ['js/recommended'],
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
-  },
-  tseslint.configs.recommended,
-  eslintConfigPrettier,
-  {
-    files: ['**/*.json'],
-    plugins: { json },
-    language: 'json/json',
-    extends: ['json/recommended'],
-  },
-  {
-    files: ['**/*.jsonc'],
-    plugins: { json },
-    language: 'json/jsonc',
-    extends: ['json/recommended'],
-  },
-  {
-    plugins: {
-      turbo: turboPlugin,
+    languageOptions: {
+      parser: tsParser,
+      globals: {
+        ...globals.node,
+      },
     },
+    // rules: {
+    //   '@nx/enforce-module-boundaries': 'error',
+    // },
+  },
+  {
+    ...prettierPlugin,
     rules: {
-      'turbo/no-undeclared-env-vars': 'warn',
+      'prettier/prettier': [
+        'error',
+        {
+          arrowParens: 'always',
+          bracketSameLine: true,
+          endOfLine: 'auto',
+          jsxSingleQuote: true,
+          printWidth: 100,
+          semi: false,
+          singleQuote: true,
+          tabWidth: 2,
+          trailingComma: 'all',
+          useTabs: false,
+        },
+      ],
+    },
+  },
+  { ignores: ['!**/*'] },
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    rules: {
+      '@nx/enforce-module-boundaries': [
+        'error',
+        {
+          enforceBuildableLibDependency: true,
+          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
+          depConstraints: [
+            {
+              sourceTag: 'scope:config',
+              onlyDependOnLibsWithTags: ['type:config'],
+            },
+            {
+              sourceTag: 'scope:plugin',
+              onlyDependOnLibsWithTags: ['scope:config', 'type:config'],
+            },
+            {
+              sourceTag: 'scope:dev',
+              onlyDependOnLibsWithTags: ['scope:plugin', 'scope:config', 'type:config'],
+            },
+            {
+              sourceTag: 'scope:express',
+              onlyDependOnLibsWithTags: ['scope:plugin', 'scope:config', 'type:config'],
+            },
+          ],
+        },
+      ],
     },
   },
   {
-    plugins: {
-      onlyWarn,
-    },
+    files: ['**/*.ts', '**/*.tsx'],
+    rules: {},
   },
   {
-    ignores: ['dist/**'],
+    files: ['**/*.js', '**/*.jsx'],
+    rules: {},
   },
-])
+]

@@ -1,11 +1,17 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@toolbox/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "declarationDir": "dist",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ES2022",
-    "moduleResolution": "bundler"
+    "baseUrl": "/",
+    "composite": true,
+    "module": "es2022",
+    "noPropertyAccessFromIndexSignature": true,
+    "rootDir": "src"
   },
+  "files": [],
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
 }

@@ -1,0 +1,44 @@
+{
+  "name": "@toolbox/express",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "author": "Dazum Dev <dazum.dev@gmail.com>",
+  "license": "MIT",
+  "main": "./dist/index.esm.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dazum-dev/toolbox.git",
+    "directory": "packages/toolbox-express"
+  },
+  "bugs": {
+    "url": "https://github.com/dazum-dev/toolbox/issues"
+  },
+  "homepage": "https://github.com/dazum-dev/toolbox/tree/main/packages/toolbox-express#readme",
+  "devDependencies": {
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/rollup": "22.0.2",
+    "@toolbox/eslint-config": "workspace:^",
+    "@toolbox/tsconfig": "workspace:^",
+    "@types/node": "20.19.9"
+  },
+  "dependencies": {
+    "@rollup/plugin-alias": "^6.0.0",
+    "@rollup/plugin-commonjs": "29.0.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/plugin-replace": "^6.0.3",
+    "@tinyhttp/app": "^3.0.1",
+    "@toolbox/config": "workspace:^",
+    "@toolbox/plugin-react": "workspace:^",
+    "rollup": "^4.52.5",
+    "rollup-plugin-gzip": "^4.1.1",
+    "rollup-plugin-summary": "^3.0.1"
+  }
+}

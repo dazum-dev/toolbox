@@ -1,0 +1,20 @@
+{
+  "name": "@toolbox/plugin-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/plugin-react/src",
+  "projectType": "library",
+  "tags": ["scope:plugin"],
+  "// targets": "to see all targets run: nx show project @toolbox/plugin-react --web",
+  "targets": {
+    "build": {
+      "cache": true,
+      "inputs": ["!{projectRoot}/**/*.md"],
+      "outputs": ["{workspaceRoot}/packages/plugin-react/dist"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["!{projectRoot}/**/*.md"],
+      "outputs": []
+    }
+  }
+}

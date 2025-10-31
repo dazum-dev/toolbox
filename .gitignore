@@ -138,5 +138,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# Turbo
-.turbo
+# NX
+.nx/cache
+.nx/workspace-data

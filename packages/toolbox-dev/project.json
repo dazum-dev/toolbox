@@ -1,0 +1,22 @@
+{
+  "name": "@toolbox/dev",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/toolbox-dev/src",
+  "projectType": "library",
+  "tags": ["scope:dev"],
+  "// targets": "to see all targets run: nx show project toolbox-dev --web",
+  "targets": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["!{projectRoot}/**/*.md"],
+      "outputs": ["{workspaceRoot}/packages/toolbox-dev/dist"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["!{projectRoot}/**/*.md"],
+      "outputs": []
+    }
+  },
+  "implicitDependencies": ["@toolbox/config"]
+}

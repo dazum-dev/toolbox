@@ -3,13 +3,15 @@ import { access, stat } from 'node:fs/promises'
 import { dirname, extname, join, resolve } from 'node:path'
 
 import { createFilter } from '@rollup/pluginutils'
-import { Options, minify as swcMinify, transform as swcTransform } from '@swc/core'
+import type { Options } from '@swc/core'
+import { minify as swcMinify, transform as swcTransform } from '@swc/core'
+import type { PluginContext } from 'rollup'
 
 import { getSwcConfig } from './config'
 import { defaultPluginOptions, INCLUDE_REGEXP } from './constants'
 import { wrapHMR } from './hmr'
-import { deepMerge } from './merge'
-import { ReactPluginOptions } from './types'
+import type { ReactPluginOptions } from './types'
+import { deepMerge } from './utils'
 
 const fileExists = (path: string) =>
   access(path, constants.F_OK)
@@ -103,12 +105,12 @@ export const react = (options: ReactPluginOptions = defaultPluginOptions) => {
 
       // TODO: parse code to handle import.meta.glob feature
 
-      const swcConfig: Options = getSwcConfig({
+      const swcConfig: Options = getSwcConfig(this as unknown as PluginContext, {
         id,
         isDev,
         pluginOption: opts,
         extension,
-        tsconfigPath: opts.tsconfigPath,
+        tsconfigPath: opts.tsconfigPath as string,
       })
       const output = await swcTransform(code, swcConfig)
 

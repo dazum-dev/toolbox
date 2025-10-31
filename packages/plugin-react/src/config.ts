@@ -1,12 +1,12 @@
 import { dirname } from 'node:path'
 
-import { Options } from '@swc/core'
+import type { Options } from '@swc/core'
 import type { PluginContext } from 'rollup'
 
 import { defaultPluginOptions } from './constants'
-import { deepMerge } from './merge'
-import { getOptions } from './option'
-import { ReactPluginOptions } from './types'
+import { getOptions } from './options'
+import type { ReactPluginOptions } from './types'
+import { deepMerge } from './utils'
 
 const esParser = {
   allowReturnOutsideFunction: false,
@@ -46,12 +46,12 @@ export type ConfigOption = {
   tsconfigPath?: string
 }
 
-export const getSwcConfig = (options: ConfigOption = defaultConf): Options => {
+export const getSwcConfig = (ctx: PluginContext, options: ConfigOption = defaultConf): Options => {
   const isTypescript = ['.ts', '.tsx'].includes(options.extension)
   const tsconfigOptions = getOptions(
-    this as unknown as PluginContext,
+    ctx,
     dirname(options.id),
-    options.tsconfigPath!,
+    (options.tsconfigPath || '') as string,
   )
   const syntax = isTypescript ? 'typescript' : 'ecmascript'
   const swcOptionsFromTsConfig = {

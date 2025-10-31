@@ -1,5 +1,5 @@
-export * from './constants'
 export { getOptions } from './config'
+export * from './constants'
 import { defaultConfig } from './config'
 import type { DevCliOptions, DevServer, DevServerClient, ENV, Proxy, ToolboxOptions } from './types'
 import { deepMerge } from './utils'
