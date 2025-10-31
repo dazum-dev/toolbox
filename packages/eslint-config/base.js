@@ -64,6 +64,10 @@ export default [
               sourceTag: 'scope:dev',
               onlyDependOnLibsWithTags: ['scope:plugin', 'scope:config', 'type:config'],
             },
+            {
+              sourceTag: 'scope:express',
+              onlyDependOnLibsWithTags: ['scope:plugin', 'scope:config', 'type:config'],
+            },
           ],
         },
       ],

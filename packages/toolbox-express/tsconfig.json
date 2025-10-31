@@ -1,0 +1,17 @@
+{
+  "extends": "@toolbox/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "/",
+    "composite": true,
+    "module": "es2022",
+    "noPropertyAccessFromIndexSignature": true,
+    "rootDir": "src"
+  },
+  "files": [],
+  "include": ["src/**/*.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

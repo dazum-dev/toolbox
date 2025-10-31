@@ -1,0 +1,21 @@
+{
+  "name": "@toolbox/express",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/toolbox-express/src",
+  "projectType": "library",
+  "tags": ["scope:express"],
+  "// targets": "to see all targets run: nx show project toolbox-express --web",
+  "targets": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["!{projectRoot}/**/*.md"],
+      "outputs": ["{workspaceRoot}/packages/toolbox-express/dist"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["!{projectRoot}/**/*.md"],
+      "outputs": []
+    }
+  }
+}
